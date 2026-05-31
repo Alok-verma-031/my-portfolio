@@ -55,3 +55,48 @@ function deleteText() {
 }
 
 typeText();
+
+// form validation
+function checkName()
+{
+  const cname=document.querySelector("#cont #cName");
+  const msgname=document.querySelector("#cont #msgName");
+   if (cname.value.trim() == "" || cname.value.length < 2) {
+        cname.style.border = "1px solid red ";
+        msgname.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i>  invalid  user name !`;
+        msgname.style.color = "red";
+    }
+    else {
+        cname.style.border = "1px solid green ";
+        msgname.innerHTML = `<i class="fa-solid fa-circle-check"></i>  valid user name`;
+        msgname.style.color = "green";
+    }
+
+
+}
+
+function checkEmail()
+{
+  const cemail=document.querySelector("#cont #cEmail");
+    const msgemail=document.querySelector("#cont #msgemail");
+    const emailpatt=/^[a-zA-Z_0-9#$&-]+@[a-z]+\.[a-z]{1,63}$/
+    if(!emailpatt.test(cemail.value.toLowerCase()))
+    {
+      cemail.style.border = "1px solid red ";
+        msgemail.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i>  invalid  email adderess!`;
+        msgemail.style.color = "red";
+    }
+    else{
+       cemail.style.border = "1px solid green ";
+        msgemail.innerHTML = `<i class="fa-solid fa-circle-check"></i>  valid  email adderess!`;
+        msgemail.style.color = "green";
+    }
+}
+function showConfirm()
+{
+window.confirm("Are you sure you want to submit ?")
+}
+
+
+
+

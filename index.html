@@ -886,19 +886,20 @@
                 <!-- contact info end -->
 
                 <!-- Contact Form start-->
-                <div class="col-sm-10 mt-sm-3 mt-md-0 mt-lg-0 col-md-6 bg-body-tertiary rounded-3 p-4 shadow-lg">
-                    <form>
+                <div class="col-sm-10 mt-sm-3 mt-md-0 mt-4 mt-lg-0 col-md-6 bg-body-tertiary rounded-3 p-4 shadow-lg">
+                    <form id="cont">
                         <div class="row">
                             <div class="col-sm-6 mb-3">
                                 <label for="cName"></label>
-                                <input type="text" class="form-control" id="cName" placeholder="Your Name">
+                                <input type="text" oninput="checkName()" class="form-control" id="cName" placeholder="Your Name">
+                                <span id="msgName" class="msg"></span>
                             </div>
                             <div class="col-sm-6 mb-3">
                                 <label for="cEmail"></label>
-                                <input type="email" class="form-control" id="cEmail" placeholder="Your Email">
+                                <input type="email" class="form-control" oninput="checkEmail()" id="cEmail" placeholder="Your Email">
+                                <span id="msgemail" class="msg"></span>
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="subject"></label>
                             <input type="text" class="form-control" id="subject" placeholder="Subject">
@@ -909,7 +910,7 @@
                             <textarea class="form-control" rows="5" id="message" placeholder="Message"></textarea>
                         </div>
 
-                        <button class="btn bg-btn">
+                        <button class="btn bg-btn" id="msgConfirm" onclick="showConfirm()">
                             Send Message
                         </button>
                     </form>

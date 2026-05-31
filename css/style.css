@@ -280,3 +280,9 @@ width: 100%;
   50% {opacity: 0;}
   100% {opacity: 1;}
 }
+
+/* form */
+.msg
+{
+    font-size: 12px;
+}
